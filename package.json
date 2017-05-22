@@ -2,7 +2,7 @@
   "name": "spa-marketplace",
   "version": "1.0.0",
   "description": "A Single Page App with a form to add items and display them at the left side.",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,9 +16,18 @@
     "url": "https://github.com/dasseya1/spa-marketplace/issues"
   },
   "homepage": "https://github.com/dasseya1/spa-marketplace#readme",
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "vue": "^2.3.3",
-    "vue-resource": "^1.3.1"
+    "dependencies": {
+    "bootstrap": "^3.3.6",
+    "ejs": "^2.3.4",
+    "express": "^4.13.3",
+    "morgan": "^1.6.1",
+    "vue": "^1.0.10",
+    "vue-resource": "^0.1.17"
+  },
+  "devDependencies": {
+    "body-parser": "^1.14.1",
+    "errorhandler": "^1.4.2",
+    "method-override": "^2.3.5",
+    "morgan": "^1.6.1"
   }
 }

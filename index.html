@@ -46,7 +46,7 @@
     <textarea class="form-control" placeholder="Quantity Available" v-model="item.quantity"></textarea>
   </div>
 
-  <button class="btn btn-primary" v-on="click: addItem">Submit</button>
+  <button class="btn btn-primary" v-on = click: "addItem">Submit</button>
         </div>
       </div>
     </div>
@@ -67,7 +67,7 @@
 
     <p class="list-group-item-text" v-if="item.description">{{ item.description }}</p>
     <p class="list-group-item-text" v-if="item.quantity">{{ item.quantity }}</p>
-    <button class="btn btn-xs btn-danger" v-on="click: deleteItem($index)">Delete</button>
+    <button class="btn btn-xs btn-danger" v-on = click: "deleteItem($index)">Delete</button>
   </a>
 
 </div>
