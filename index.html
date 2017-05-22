@@ -16,7 +16,7 @@
     </div>
   </nav>
   <!-- main body of our application -->
-  <div class="container" id="products">
+  <div class="container" id="items">
 
     <!-- add an item form -->
     <div class="col-sm-6">
@@ -25,15 +25,55 @@
           <h3>Add an item</h3>
         </div>
         <div class="panel-body">
+
+  <div class="form-group">
+    <input class="form-control" placeholder="Name" v-model="item.name">
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" placeholder="Price" v-model="item.price"></textarea>
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" placeholder="Short Description" v-model="item.description"></textarea>
+  </div>
+
+  <div class="form-group">
+    <input type="date" class="form-control" placeholder="Date Available" v-model="item.date">
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" placeholder="Quantity Available" v-model="item.quantity"></textarea>
+  </div>
+
+  <button class="btn btn-primary" v-on="click: addItem">Submit</button>
         </div>
       </div>
     </div>
     <!-- show the items for sale -->
     <div class="col-sm-6">
       <div class="list-group">
+
+  <a href="#" class="list-group-item" v-repeat="item in items">
+    <h4 class="list-group-item-heading">
+      <i class="glyphicon glyphicon-tag"></i>
+      {{ item.name }}
+    </h4>
+
+    <h5>
+      <i class="glyphicon glyphicon-calendar" v-if="item.date"></i>
+      {{ item.date }}
+    </h5>
+
+    <p class="list-group-item-text" v-if="item.description">{{ item.description }}</p>
+    <p class="list-group-item-text" v-if="item.quantity">{{ item.quantity }}</p>
+    <button class="btn btn-xs btn-danger" v-on="click: deleteItem($index)">Delete</button>
+  </a>
+
+</div>
       </div>
     </div>
-  </div>
+
 
   <!-- JS files -->
   <script src="node_modules/vue/dist/vue.js"></script>
