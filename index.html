@@ -4,34 +4,7 @@
   <meta charset="UTF-8">
   <title>SPA Marketplace</title>
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <style>
-  .form-control {
-    margin-bottom: 10px;
-  }
-  .btn-danger {
-    margin-top: 8px;
-  }
-  .btn-circle {
-  width: 30px;
-  height: 30px;
-  text-align: center;
-  padding: 6px 0;
-  font-size: 12px;
-  line-height: 1.428571429;
-  border-radius: 15px;
- }
- body {
-   background-color: #0769ad;
- }
- nav.navbar {
-   background-color: #9c3493;
-   border-color: black;
- }
- .navbar-brand {
-   color: white !important;
-   font-style: italic;
- }
-  </style>
+  <link rel="stylesheet" href="./public/style.css">
 </head>
 <body>
 
@@ -62,7 +35,7 @@
       <div class="list-group">
         <a href="#" class="list-group-item" v-for="item in items">
           <h4 class="list-group-item-heading"><i class="glyphicon glyphicon-tag"></i> {{ item.name }}
-          <button class="btn btn-primary btn-circle price" v-if="item.price">$ {{item.price}}</button></h4>
+          <button class="btn btn-primary btn-circle price" v-if="item.price">${{item.price}}</button></h4>
           <h5><i class="glyphicon glyphicon-calendar" v-if="item.date"></i> {{ item.date }}</h5>
           <p class="list-group-item-text" v-if="item.description">{{ item.description }}</p>
           <h4 class="list-group-item-text" v-if="item.quantity"><strong>{{ item.quantity }} available units</strong></h4>

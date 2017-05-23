@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css?family=Quintessential');
+.form-control {
+  margin-bottom: 10px;
+}
+
+.btn-danger {
+  margin-top: 8px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+body {
+  background-color: #0769ad;
+}
+
+nav.navbar {
+  background-color: #9c3493;
+  border-color: black;
+}
+
+.navbar-brand {
+  color: white !important;
+  font-family: 'Quintessential', cursive;
+  float: none;
+  font-size: 3em;
+  padding-bottom: .25em;
+}
+
+.container-fluid {
+  float: left;
+  padding: 15px;
+  text-align: center;
+  width: 100%;
+}

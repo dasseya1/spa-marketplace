@@ -1,4 +1,3 @@
-var items = require('./datastorage.js');
 new Vue({
 
   // el targets the div with an id of 'items'
@@ -26,7 +25,7 @@ new Vue({
   methods: {
     // We dedicate a method to retrieving and setting some data
     fetchItems: function() {
-      //var items = [];
+      var items = [];
 
       this.$http.get('api/items')
         .success(function(items) {
@@ -39,13 +38,16 @@ new Vue({
     },
 
     // Adds an item to the existing events array
-    addItem: function() {
+    addItem: function(e) {
+      e.preventDefault();
       if (this.item.name.trim()) {
         //this.items.push(this.item);
         this.$http.post('api/items', this.item)
           .success(function(res) {
             this.items.push(this.item);
+            console.log(this.items);
             console.log("Item added!");
+            this.item = '';
           })
           .error(function(error) {
             console.log(error);
