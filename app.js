@@ -1,3 +1,4 @@
+var items = require('./datastorage.js');
 new Vue({
 
   // el targets the div with an id of 'items'
@@ -25,10 +26,7 @@ new Vue({
   methods: {
     // We dedicate a method to retrieving and setting some data
     fetchItems: function() {
-      var items = [];
-      // $set is a method provided by Vue to push
-      // data onto an array
-      //this.$set('items', items);
+      //var items = [];
 
       this.$http.get('api/items')
         .success(function(items) {
@@ -44,15 +42,8 @@ new Vue({
     addItem: function() {
       if (this.item.name.trim()) {
         //this.items.push(this.item);
-        this.item = {
-          name: '',
-          price: '',
-          description: '',
-          date: '',
-          quantity: ''
-        };
         this.$http.post('api/items', this.item)
-          .success(function(response) {
+          .success(function(res) {
             this.items.push(this.item);
             console.log("Item added!");
           })
@@ -63,10 +54,10 @@ new Vue({
     },
     deleteItem: function(index) {
       if (confirm("Are you sure you want to delete this item?")) {
-        this.$http.delete('api/items/' + item.id)
+        this.$http.delete('api/items/' + this.item.id)
           .success(function(response) {
-            // $remove is a Vue convenience method similar to splice
-            this.items.$remove(index);
+            // Remove the item
+            this.items.splice(index, 1);
           })
           .error(function(error) {
             console.log(error);

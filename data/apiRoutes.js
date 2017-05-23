@@ -1,10 +1,10 @@
 // Require our json file in data folder
-var datastorage = require('./datastorage.js');
+var items = require('./datastorage.js');
 
 exports.items = function(req, res) {
-  res.json(datastorage);
+  res.json(items);
 };
 
 exports.item = function(req, res) {
-  res.json(datastorage[req.param.itemId]);
+  res.json(items[req.param.itemId]);
 };

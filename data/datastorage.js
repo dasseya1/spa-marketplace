@@ -8,11 +8,13 @@ module.exports = [{
     name: 'Nice Pants',
     price: '50',
     description: 'Pants from Italy',
-    date: '09-10-2017'
+    date: '09/10/2017',
+    quantity: '190'
 }, {
     id: 2,
-    name: 'The Martian Premiere',
+    name: 'Martian Premiere',
     price: '40',
     description: 'The best shirt that makes you feel special',
-    date: '06-10-2017'
+    date: '06/10/2017',
+    quantity: '50'
 }];
